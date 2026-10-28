@@ -29,10 +29,16 @@ a { color: inherit; }
 .hero .nomes { font-family: "Permanent Marker", cursive; font-size: 24px; }
 .hero .nomes i { color: var(--vermelho); font-style: normal; }
 .hero p { margin-top: 10px; font-size: 16px; }
-.adesivo { position: absolute; z-index: 3; width: 150px; }
-.adesivo.alice { left: -10px; bottom: -6px; transform: rotate(-6deg); }
-.adesivo.lucas { right: -10px; bottom: -6px; transform: rotate(6deg); }
-.hero.com-adesivos { padding-bottom: 150px; }
+.adesivo { position: relative; z-index: 3; }
+.adesivo img { display: block; width: 100%; filter: drop-shadow(3px 4px 0 rgba(0,0,0,.25)); }
+.adesivo.topo { width: 92%; margin: -26px auto 0; transform: rotate(2deg); }
+.adesivo.sec { position: absolute; right: 4px; top: -26px; width: 165px; transform: rotate(5deg); }
+.adesivo.fim { width: 78%; margin: 6px auto 0; transform: rotate(-2deg); }
+.fala { position: absolute; color: var(--preto); background: var(--branco); border: 2px solid var(--preto); border-radius: 14px; padding: 6px 10px;
+  font-family: "Permanent Marker", cursive; font-size: 14px; line-height: 1.2; box-shadow: 3px 3px 0 var(--preto); }
+.adesivo.sec .fala { right: 128px; top: 150px; width: 200px; transform: rotate(-4deg); }
+.adesivo.fim .fala { left: -6px; top: -14px; transform: rotate(-5deg); background: var(--amarelo); }
+.comodo > header.com-adesivo { min-height: 190px; padding-right: 160px; }
 
 /* faixa */
 .faixa { background: var(--preto); color: var(--branco); white-space: nowrap; overflow: hidden; padding: 9px 0; font-family: "Anton", Impact, sans-serif;
@@ -138,7 +144,7 @@ body { padding-bottom: 70px; }
     <p>A gente tá montando essa casa pra receber quem a gente gosta. Então ela também é um pouco sua. Vai ter churrasco e o importante é você lá, ajudando ou não. Só não vale faltar.</p>
     <p>Se quiser dar aquela moral pra encher a casa, tá tudo aí embaixo.</p>
   </div>
-  
+  <div class="adesivo topo"><img src="img/adesivo-estadio-casal.png" alt="Alice e Lucas"></div>
 </header>
 <div class="faixa"><span>Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · </span></div>
 
@@ -160,11 +166,11 @@ body { padding-bottom: 70px; }
 </section>
 
 <section class="comodo">
-  <header><div class="fundo listras"></div><h2>Sala</h2><p>aqui é Corinthians</p></header>
+  <header class="com-adesivo"><div class="fundo listras"></div><h2>Sala</h2><p>aqui é Corinthians</p><div class="adesivo sec"><img src="img/adesivo-arena-alice.png" alt="Alice e Lucas"><span class="fala">a Alice já tá de camisa esperando o jogo</span></div></header>
   <article class="item dir" id="tv">
   <div class="palco"><div class="foto"><img src="img/tv.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 500</b></div></div>
   <h3>Smart TV 65&quot;</h3>
-  <p class="balao">A de 42 vai pro quarto e a sala tá esperando a nova. Todo gol do Timão aqui vai ter um pedaço seu.</p>
+  <p class="balao">Todo gol do Timão aqui vai ter um pedaço seu.</p>
   <div class="bonus"><b>🎁 bônus</b> Convite pra ver o primeiro jogo do Timão nela comigo. Ou do seu time, caso o Timão esteja na Série B. A cerveja é por nossa conta.</div><div class="meta">Fecha com 8 Pix de R$ 500. Mas qualquer valor ajuda, de verdade.</div>
   <button class="pix" data-pix="00020126670014br.gov.bcb.pix0114+55319951075350227Cha casa nova - Smart TV 655204000053039865406500.005802BR5917LUCAS INNOCENTINI6006BRASIL62060502TV63045FC1" data-nome="Smart TV 65&quot; · R$ 500">Quero ajudar com R$ 500</button>
   <button class="pix outro" data-pix="00020126670014br.gov.bcb.pix0114+55319951075350227Cha casa nova - Smart TV 655204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62060502TV63044046" data-nome="Smart TV 65&quot; · você digita o valor no banco">ou ajudar com outro valor</button>
@@ -195,7 +201,7 @@ body { padding-bottom: 70px; }
   <div class="loja"><a href="https://www.amazon.com.br/dp/B0765NMJQS" target="_blank" rel="noopener">ver na loja ↗</a></div>
 </article>
 </section><section class="comodo">
-  <header><div class="fundo listras"></div><h2>Quarto</h2><p>onde a gente se recupera das derrotas</p></header>
+  <header class="com-adesivo"><div class="fundo listras"></div><h2>Quarto</h2><p>onde a gente se recupera das derrotas</p><div class="adesivo sec"><img src="img/adesivo-praia-casal.png" alt="Alice e Lucas"><span class="fala">calor na praia: ótimo. no quarto: nem tanto</span></div></header>
   <article class="item dir" id="ar">
   <div class="palco"><div class="foto"><img src="img/ar.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 460</b></div></div>
   <h3>Ar-condicionado</h3>
@@ -339,6 +345,7 @@ body { padding-bottom: 70px; }
 <section class="carta">
   Obrigado por fazer parte disso com a gente. Te espero no churrasco!
   <div class="ass">Alice e Lucas ♥</div>
+  <div class="adesivo fim"><img src="img/adesivo-noite-casal.png" alt="Alice e Lucas"><span class="fala">a gente quando seu Pix cair</span></div>
 </section>
 
 <footer class="rodape">Preços consultados nas lojas em 27/10/2026 e arredondados pra cobrir variação e frete. Se um presente passar da meta, a diferença vai pro próximo da lista.</footer>
