@@ -1,0 +1,203 @@
+<!-- Depende de items.json e status.json na mesma pasta. O token deve ser fine-grained, restrito a este repositório, com Contents: read and write. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Painel</title>
+  <style>
+    :root { --ink:#111; --paper:#F6F2EA; --yellow:#FFF6C2; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.35 Arial, sans-serif; }
+    button, input { font:inherit; }
+    button { cursor:pointer; }
+    .page { max-width:460px; min-height:100vh; margin:auto; padding:20px 16px 112px; }
+    h1 { margin:0; font:900 34px/1 Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; letter-spacing:.3px; text-transform:uppercase; }
+    .top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+    .summary { margin:4px 0 0; font-weight:700; }
+    .loaded { margin:2px 0 18px; font-size:12px; color:#4b4b4b; }
+    .reload, .save { border:2px solid var(--ink); background:var(--ink); color:white; font-weight:800; border-radius:7px; }
+    .reload { padding:10px 12px; white-space:nowrap; }
+    .reload:disabled, .save:disabled { opacity:.45; cursor:not-allowed; }
+    .item { display:grid; grid-template-columns:56px 1fr auto; gap:12px; align-items:center; background:#fff; border:2px solid var(--ink); border-radius:10px; padding:11px; margin:12px 0; }
+    .item.closed { background:var(--yellow); }
+    .thumb { width:56px; height:56px; object-fit:cover; border:1px solid var(--ink); border-radius:5px; background:#eee; }
+    .name { margin:0 0 3px; font-weight:800; }
+    .count { font-size:23px; font-weight:900; }
+    .badge { display:inline-block; margin-top:4px; padding:2px 6px; border:1px solid var(--ink); border-radius:4px; font-size:11px; font-weight:900; }
+    .progress { height:8px; margin-top:8px; overflow:hidden; border:1px solid var(--ink); border-radius:99px; background:#fff; }
+    .progress i { display:block; height:100%; background:var(--ink); }
+    .controls { display:grid; gap:6px; }
+    .controls button, .small-actions button { min-width:42px; min-height:38px; border:2px solid var(--ink); border-radius:6px; background:white; color:var(--ink); font-size:22px; font-weight:900; }
+    .controls button:disabled { opacity:.35; cursor:not-allowed; }
+    .small-actions { display:flex; gap:7px; margin:16px 0 0 68px; }
+    .small-actions button { min-width:0; padding:6px 9px; font-size:13px; }
+    .empty, .error, .token-box { margin-top:25px; padding:17px; background:#fff; border:2px solid var(--ink); border-radius:10px; }
+    .error { background:#fff0f0; }
+    .token-box label { display:block; font-weight:800; margin-bottom:9px; }
+    .token-box input { display:block; width:100%; padding:12px; border:2px solid var(--ink); border-radius:6px; }
+    .token-box button { width:100%; margin-top:10px; padding:13px; border:2px solid var(--ink); border-radius:7px; background:var(--ink); color:#fff; font-weight:900; }
+    .fixed { position:fixed; z-index:2; right:0; bottom:0; left:0; padding:10px 16px calc(10px + env(safe-area-inset-bottom)); background:rgba(246,242,234,.96); border-top:1px solid #c7c1b7; }
+    .fixed-inner { max-width:460px; margin:auto; }
+    .save { width:100%; padding:15px; font-size:17px; }
+    footer { margin-top:24px; text-align:center; }
+    .change-token { border:0; background:transparent; text-decoration:underline; font-size:12px; }
+    .toast { position:fixed; z-index:3; right:16px; bottom:88px; left:16px; max-width:428px; margin:auto; padding:12px; border:2px solid var(--ink); border-radius:7px; background:#fff; font-weight:800; box-shadow:3px 3px 0 var(--ink); }
+    [hidden] { display:none !important; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section id="tokenScreen" class="token-box" hidden>
+      <h1>Painel do chá</h1>
+      <p id="tokenMessage">Cole aqui o token do GitHub (fica salvo só neste celular)</p>
+      <label for="token">Token do GitHub</label>
+      <input id="token" type="password" autocomplete="off" spellcheck="false">
+      <button id="tokenButton" type="button">Entrar</button>
+    </section>
+
+    <section id="app" hidden>
+      <header>
+        <div class="top">
+          <div><h1>Painel do chá</h1><p id="summary" class="summary">—</p></div>
+          <button id="reload" class="reload" type="button">Recarregar</button>
+        </div>
+        <p id="loaded" class="loaded">Carregando…</p>
+      </header>
+      <div id="content"></div>
+      <footer><button id="changeToken" class="change-token" type="button">trocar token</button></footer>
+    </section>
+  </main>
+  <div id="saveBar" class="fixed" hidden><div class="fixed-inner"><button id="save" class="save" type="button" disabled>Salvar (0 mudanças)</button></div></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script>
+    (() => {
+      'use strict';
+      const OWNER = 'lucasinnocentini';
+      const REPO = 'cha-casa-nova';
+      const BRANCH = 'main';
+      const API_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/status.json`;
+      const $ = (id) => document.getElementById(id);
+      const el = { tokenScreen:$('tokenScreen'), token:$('token'), tokenMessage:$('tokenMessage'), tokenButton:$('tokenButton'), app:$('app'), content:$('content'), summary:$('summary'), loaded:$('loaded'), reload:$('reload'), saveBar:$('saveBar'), save:$('save'), toast:$('toast'), changeToken:$('changeToken') };
+      let token = localStorage.getItem('cha_token') || '';
+      let items = null;
+      let original = {};
+      let draft = {};
+      let sha = '';
+      let itemsError = '';
+      let toastTimer;
+
+      function utf8Base64(text) { return btoa(unescape(encodeURIComponent(text))); }
+      function fromUtf8Base64(text) { return decodeURIComponent(escape(atob(text.replace(/\s/g, '')))); }
+      function normalize(value, item) { return Math.max(0, Math.min(Number(item.partes) || 0, Number(value) || 0)); }
+      function changes() { return items ? items.reduce((n, item) => n + (normalize(draft[item.slug], item) !== normalize(original[item.slug], item) ? 1 : 0), 0) : 0; }
+      function showToast(message) { el.toast.textContent = message; el.toast.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.toast.hidden = true; }, 4500); }
+      function showToken(message) { el.app.hidden = true; el.saveBar.hidden = true; el.tokenScreen.hidden = false; el.tokenMessage.textContent = message || 'Cole aqui o token do GitHub (fica salvo só neste celular)'; el.token.value = ''; el.token.focus(); }
+      function apiHeaders() { return { Authorization:`Bearer ${token}`, Accept:'application/vnd.github+json' }; }
+      function apiError(response) { return response.json().catch(() => ({})).then(body => new Error(body.message || `Erro ${response.status}`)); }
+
+      async function loadItems() {
+        try {
+          const response = await fetch('items.json', { cache:'no-store' });
+          if (!response.ok) throw new Error(`Não foi possível carregar items.json (${response.status}).`);
+          const data = await response.json();
+          if (!Array.isArray(data)) throw new Error('items.json não contém uma lista válida.');
+          items = data; itemsError = '';
+          return true;
+        } catch (error) {
+          items = null; itemsError = `Erro ao carregar a lista: ${error.message}`;
+          if (token) showAppError(`Erro ao carregar a lista: ${error.message}`);
+          return false;
+        }
+      }
+
+      async function loadStatus() {
+        const response = await fetch(`${API_URL}?ref=${BRANCH}`, { headers:apiHeaders(), cache:'no-store' });
+        if (response.status === 404) { original = {}; draft = {}; sha = ''; return; }
+        if (response.status === 401 || response.status === 403) { await handleAuthError(response); throw new Error('TOKEN_INVÁLIDO'); }
+        if (!response.ok) throw await apiError(response);
+        const data = await response.json();
+        sha = data.sha || '';
+        try { original = JSON.parse(fromUtf8Base64(data.content || '')) || {}; }
+        catch (_) { throw new Error('status.json não contém JSON válido.'); }
+        draft = { ...original };
+      }
+
+      async function handleAuthError(response) {
+        const body = await response.json().catch(() => ({}));
+        localStorage.removeItem('cha_token'); token = '';
+        showToken(body.message || 'Token inválido ou sem permissão para este repositório.');
+      }
+
+      function showAppError(message) {
+        el.tokenScreen.hidden = true; el.app.hidden = false; el.saveBar.hidden = true;
+        el.summary.textContent = 'Não foi possível carregar'; el.loaded.textContent = '';
+        el.content.innerHTML = `<div class="error"></div>`;
+        el.content.firstChild.textContent = message;
+      }
+
+      function render() {
+        if (!items) return;
+        const closed = items.filter(item => normalize(draft[item.slug], item) >= Number(item.partes)).length;
+        el.summary.textContent = `${closed} de ${items.length} presentes fechados`;
+        el.loaded.textContent = `Último carregamento: ${new Date().toLocaleString('pt-BR')}`;
+        el.content.replaceChildren();
+        if (!items.length) { const empty = document.createElement('div'); empty.className = 'empty'; empty.textContent = 'Nenhum presente encontrado em items.json.'; el.content.append(empty); }
+        items.forEach(item => {
+          const count = normalize(draft[item.slug], item), parts = Number(item.partes) || 0, isClosed = count >= parts;
+          const card = document.createElement('article'); card.className = `item${isClosed ? ' closed' : ''}`;
+          const image = document.createElement('img'); image.className = 'thumb'; image.src = item.img || ''; image.alt = ''; image.onerror = () => { image.style.visibility = 'hidden'; };
+          const details = document.createElement('div');
+          const name = document.createElement('p'); name.className = 'name'; name.textContent = item.nome || item.slug;
+          const counter = document.createElement('div'); counter.className = 'count'; counter.textContent = `${count} / ${parts}`;
+          details.append(name, counter);
+          if (isClosed) { const badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = 'FECHADO ✓'; details.append(badge); }
+          if (parts > 1) { const progress = document.createElement('div'); progress.className = 'progress'; const fill = document.createElement('i'); fill.style.width = `${parts ? (count / parts) * 100 : 0}%`; progress.append(fill); details.append(progress); }
+          const controls = document.createElement('div'); controls.className = 'controls';
+          const minus = document.createElement('button'); minus.type = 'button'; minus.textContent = '−'; minus.disabled = count <= 0; minus.setAttribute('aria-label', `Diminuir ${item.nome || item.slug}`); minus.onclick = () => setCount(item, count - 1);
+          const plus = document.createElement('button'); plus.type = 'button'; plus.textContent = '+'; plus.disabled = count >= parts; plus.setAttribute('aria-label', `Aumentar ${item.nome || item.slug}`); plus.onclick = () => setCount(item, count + 1);
+          controls.append(minus, plus); card.append(image, details, controls);
+          const actions = document.createElement('div'); actions.className = 'small-actions';
+          const close = document.createElement('button'); close.type = 'button'; close.textContent = 'fechar tudo'; close.onclick = () => setCount(item, parts);
+          const zero = document.createElement('button'); zero.type = 'button'; zero.textContent = 'zerar'; zero.onclick = () => setCount(item, 0);
+          actions.append(close, zero);
+          const wrapper = document.createElement('div'); wrapper.append(card, actions); el.content.append(wrapper);
+        });
+        const totalChanges = changes(); el.save.disabled = totalChanges === 0; el.save.textContent = `Salvar (${totalChanges} ${totalChanges === 1 ? 'mudança' : 'mudanças'})`;
+      }
+
+      function setCount(item, value) { draft[item.slug] = normalize(value, item); render(); }
+      async function start() {
+        const hasItems = await loadItems();
+        if (!token) { showToken(hasItems ? undefined : itemsError); return; }
+        if (!hasItems) return;
+        el.tokenScreen.hidden = true; el.app.hidden = false; el.saveBar.hidden = false; el.content.innerHTML = '<div class="empty">Carregando…</div>';
+        try { await loadStatus(); if (!token) return; render(); }
+        catch (error) { if (error.message !== 'TOKEN_INVÁLIDO') showAppError(`Erro ao carregar o status: ${error.message}`); }
+      }
+      async function reload() { if (changes() && !confirm('Há mudanças não salvas. Recarregar e descartá-las?')) return; await start(); }
+      async function save() {
+        if (!changes()) return;
+        el.save.disabled = true; el.save.textContent = 'salvando...';
+        const clean = {}; items.forEach(item => { const n = normalize(draft[item.slug], item); if (n) clean[item.slug] = n; });
+        try {
+          const response = await fetch(API_URL, { method:'PUT', headers:{ ...apiHeaders(), 'Content-Type':'application/json' }, body:JSON.stringify({ message:'Atualiza status', content:utf8Base64(JSON.stringify(clean, null, 2)), sha, branch:BRANCH }) });
+          if (response.status === 401 || response.status === 403) { await handleAuthError(response); return; }
+          if (response.status === 409 || response.status === 422) { await loadStatus(); render(); showToast('alguém atualizou antes, recarreguei, confere e salva de novo'); return; }
+          if (!response.ok) throw await apiError(response);
+          const data = await response.json(); sha = (data.content && data.content.sha) || sha; original = { ...clean }; draft = { ...clean }; render(); showToast('Salvo! O site atualiza em ~1 min');
+        } catch (error) { showToast(`Não foi possível salvar: ${error.message}`); render(); }
+      }
+
+      el.tokenButton.onclick = () => { const value = el.token.value.trim(); if (!value) { el.token.focus(); return; } localStorage.setItem('cha_token', value); token = value; start(); };
+      el.token.addEventListener('keydown', event => { if (event.key === 'Enter') el.tokenButton.click(); });
+      el.reload.onclick = reload; el.save.onclick = save;
+      el.changeToken.onclick = () => { localStorage.removeItem('cha_token'); token = ''; showToken(); };
+      window.addEventListener('beforeunload', event => { if (changes()) { event.preventDefault(); event.returnValue = ''; } });
+      start();
+    })();
+  </script>
+</body>
+</html>

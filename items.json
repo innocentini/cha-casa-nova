@@ -1,0 +1,135 @@
+[
+ {
+  "slug": "tv",
+  "nome": "Smart TV 65\"",
+  "partes": 8,
+  "valor": 500,
+  "img": "img/tv.jpg"
+ },
+ {
+  "slug": "soundbar",
+  "nome": "Soundbar",
+  "partes": 2,
+  "valor": 500,
+  "img": "img/soundbar.jpg"
+ },
+ {
+  "slug": "quadros",
+  "nome": "Quadros decorativos",
+  "partes": 1,
+  "valor": 355,
+  "img": "img/quadros.jpg"
+ },
+ {
+  "slug": "suporte",
+  "nome": "Suporte para TV",
+  "partes": 1,
+  "valor": 230,
+  "img": "img/suporte.jpg"
+ },
+ {
+  "slug": "ar",
+  "nome": "Ar-condicionado",
+  "partes": 5,
+  "valor": 460,
+  "img": "img/ar.jpg"
+ },
+ {
+  "slug": "espelho",
+  "nome": "Espelho de corpo inteiro",
+  "partes": 4,
+  "valor": 520,
+  "img": "img/espelho.jpg"
+ },
+ {
+  "slug": "comoda",
+  "nome": "Cômoda",
+  "partes": 4,
+  "valor": 470,
+  "img": "img/comoda.jpg"
+ },
+ {
+  "slug": "lencol",
+  "nome": "Jogo de lençol queen",
+  "partes": 1,
+  "valor": 220,
+  "img": "img/lencol.jpg"
+ },
+ {
+  "slug": "protetor",
+  "nome": "Protetor de colchão",
+  "partes": 1,
+  "valor": 100,
+  "img": "img/protetor.jpg"
+ },
+ {
+  "slug": "poltrona",
+  "nome": "Poltrona para a varanda",
+  "partes": 2,
+  "valor": 500,
+  "img": "img/poltrona.jpg"
+ },
+ {
+  "slug": "decanter",
+  "nome": "Decanter",
+  "partes": 1,
+  "valor": 360,
+  "img": "img/decanter.jpg"
+ },
+ {
+  "slug": "bar",
+  "nome": "Jogo para bar",
+  "partes": 1,
+  "valor": 150,
+  "img": "img/bar.jpg"
+ },
+ {
+  "slug": "portacopos",
+  "nome": "Porta-copos bordados",
+  "partes": 1,
+  "valor": 90,
+  "img": "img/portacopos.jpg"
+ },
+ {
+  "slug": "cadeira",
+  "nome": "Cadeira ergonômica",
+  "partes": 4,
+  "valor": 450,
+  "img": "img/cadeira.jpg"
+ },
+ {
+  "slug": "monitor",
+  "nome": "Monitor portátil",
+  "partes": 2,
+  "valor": 340,
+  "img": "img/monitor.jpg"
+ },
+ {
+  "slug": "ninja",
+  "nome": "Liquidificador Ninja",
+  "partes": 4,
+  "valor": 400,
+  "img": "img/ninja.jpg"
+ },
+ {
+  "slug": "nespresso",
+  "nome": "Calendário do Advento Nespresso",
+  "partes": 1,
+  "valor": 280,
+  "img": "img/nespresso.jpg"
+ },
+ {
+  "slug": "descanso",
+  "nome": "Descanso de colher",
+  "partes": 1,
+  "valor": 210,
+  "img": "img/descanso.jpg"
+ },
+ {
+  "slug": "kitcozinha",
+  "nome": "Kit \"cadê a bacia?\"",
+  "partes": 1,
+  "valor": 290,
+  "img": "img/bowls.jpg"
+ }
+]
