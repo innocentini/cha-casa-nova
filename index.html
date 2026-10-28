@@ -1,0 +1,408 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chá de casa nova · Alice e Lucas</title>
+<meta property="og:title" content="Chá de casa nova da Alice e do Lucas">
+<meta property="og:description" content="A casa tá linda. Vazia, mas linda. Bora encher?">
+<meta property="og:image" content="https://lucasinnocentini.github.io/cha-casa-nova/img/og.jpg">
+<meta property="og:url" content="https://lucasinnocentini.github.io/cha-casa-nova/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root { --preto:#111; --branco:#fff; --papel:#F6F2EA; --amarelo:#FFE14D; --vermelho:#E5322D; --verde:#1DB954; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--preto); }
+body { font-family: "Inter", -apple-system, Helvetica, Arial, sans-serif; color: var(--preto); background: var(--papel);
+  max-width: 460px; margin: 0 auto; overflow-x: hidden; font-size: 16px; line-height: 1.4; }
+a { color: inherit; }
+.anton { font-family: "Anton", Impact, "Arial Narrow", sans-serif; font-weight: 400; letter-spacing: .5px; }
+.mao { font-family: "Permanent Marker", "Marker Felt", cursive; }
+.listras { background: repeating-linear-gradient(90deg, var(--preto) 0 26px, var(--branco) 26px 52px); }
+
+/* hero */
+.hero { position: relative; padding: 34px 18px 40px; overflow: hidden; }
+.hero .placa { position: relative; background: var(--branco); border: 4px solid var(--preto); border-radius: 18px; padding: 22px 18px 20px;
+  transform: rotate(-2deg); box-shadow: 8px 8px 0 var(--preto); text-align: center; z-index: 2; }
+.hero .tag { display: inline-block; background: var(--preto); color: var(--amarelo); font-family: "Permanent Marker", cursive; font-size: 15px;
+  padding: 3px 12px; border-radius: 6px; transform: rotate(2deg); }
+.hero h1 { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 62px; line-height: 1.08; margin: 14px 0 8px; text-transform: uppercase; }
+.hero h1 span { background: var(--amarelo); padding: 0 6px; }
+.hero .nomes { font-family: "Permanent Marker", cursive; font-size: 24px; }
+.hero .nomes i { color: var(--vermelho); font-style: normal; }
+.hero p { margin-top: 10px; font-size: 16px; }
+.adesivo { position: absolute; z-index: 3; width: 150px; }
+.adesivo.alice { left: -10px; bottom: -6px; transform: rotate(-6deg); }
+.adesivo.lucas { right: -10px; bottom: -6px; transform: rotate(6deg); }
+.hero.com-adesivos { padding-bottom: 150px; }
+
+/* faixa */
+.faixa { background: var(--preto); color: var(--branco); white-space: nowrap; overflow: hidden; padding: 9px 0; font-family: "Anton", Impact, sans-serif;
+  font-size: 18px; text-transform: uppercase; letter-spacing: 1px; transform: rotate(-1.5deg); margin: -10px -10px 0; position: relative; z-index: 4; }
+.faixa span { display: inline-block; animation: rola 22s linear infinite; }
+.faixa b { color: var(--amarelo); font-weight: 400; }
+@keyframes rola { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* como funciona */
+.como { padding: 34px 18px 10px; }
+.como h2, .bloco h2 { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 38px; text-transform: uppercase; line-height: 1; }
+.como h2 small { display: block; font-family: "Permanent Marker", cursive; font-size: 18px; text-transform: none; color: var(--vermelho); margin-top: 4px; }
+.passos { margin-top: 16px; display: grid; gap: 10px; }
+.passo { display: flex; gap: 12px; align-items: center; background: var(--branco); border: 3px solid var(--preto); border-radius: 14px; padding: 12px 14px;
+  box-shadow: 4px 4px 0 var(--preto); }
+.passo b { flex: 0 0 auto; font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 34px; line-height: 1; width: 34px; text-align: center; }
+.passo:nth-child(2) { transform: rotate(1deg); background: var(--amarelo); }
+.passo:nth-child(3) { transform: rotate(-1deg); }
+.ganha { margin: 22px 0 6px; background: var(--preto); color: var(--branco); border-radius: 16px; padding: 18px; position: relative; }
+.ganha h3 { font-family: "Permanent Marker", cursive; font-weight: 400; font-size: 22px; color: var(--amarelo); margin-bottom: 8px; }
+.ganha li { list-style: none; margin: 8px 0; padding-left: 26px; position: relative; }
+.ganha li::before { content: "♥"; position: absolute; left: 0; color: var(--vermelho); font-size: 18px; top: -2px; }
+
+/* cômodo */
+.comodo { padding: 30px 0 10px; }
+.comodo > header { margin: 0 0 18px; padding: 14px 18px 12px; color: var(--branco); position: relative; }
+.comodo > header .fundo { position: absolute; inset: 0; opacity: 1; }
+.comodo > header h2 { position: relative; display: inline-block; background: var(--preto); color: var(--branco); font-family: "Anton", Impact, sans-serif;
+  font-weight: 400; font-size: 44px; text-transform: uppercase; line-height: 1; padding: 4px 12px; transform: rotate(-2deg); border: 3px solid var(--branco); }
+.comodo > header p { position: relative; display: inline-block; margin-left: 6px; background: var(--amarelo); color: var(--preto); font-family: "Permanent Marker", cursive;
+  font-size: 16px; padding: 2px 10px; transform: rotate(2deg); border: 2px solid var(--preto); }
+
+.item { margin: 0 16px 34px; background: var(--branco); border: 3px solid var(--preto); border-radius: 20px; padding: 16px; box-shadow: 6px 6px 0 var(--preto); }
+.item.esq { transform: rotate(-.8deg); }
+.item.dir { transform: rotate(.8deg); }
+.palco { position: relative; }
+.foto { height: 220px; border-radius: 12px; background: var(--branco); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.foto img { max-width: 92%; max-height: 92%; object-fit: contain; }
+.foto.kit { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.foto.kit img { width: 100%; height: 104px; object-fit: contain; }
+.foto.vazia { font-size: 70px; background: #EEE; }
+.selo { position: absolute; right: -10px; top: -14px; width: 104px; height: 104px; border-radius: 50%; background: var(--amarelo); border: 3px solid var(--preto);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(10deg); box-shadow: 3px 3px 0 var(--preto); }
+.selo small { font-family: "Permanent Marker", cursive; font-size: 13px; line-height: 1; }
+.selo b { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; }
+.selo.inteiro { background: var(--branco); }
+.item h3 { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-top: 10px; }
+.balao { position: relative; margin: 10px 0 0; background: var(--papel); border: 2px solid var(--preto); border-radius: 14px; padding: 10px 12px;
+  font-family: "Permanent Marker", cursive; font-size: 16px; line-height: 1.3; }
+.balao::before { content: ""; position: absolute; top: -10px; left: 26px; width: 16px; height: 16px; background: var(--papel); border-left: 2px solid var(--preto);
+  border-top: 2px solid var(--preto); transform: rotate(45deg); }
+.cotas { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px; }
+.camisa { width: 28px; height: 28px; }
+.camisa path { fill: var(--branco); stroke: var(--preto); stroke-width: 1.4; stroke-linejoin: round; }
+.camisa path.lista { fill: none; stroke-width: 1.4; }
+.meta { font-size: 13px; color: #555; margin-top: 4px; }
+button.pix { margin-top: 14px; width: 100%; border: 3px solid var(--preto); background: var(--preto); color: var(--branco); border-radius: 14px; padding: 15px 10px;
+  font-family: "Anton", Impact, sans-serif; font-size: 21px; letter-spacing: .5px; text-transform: uppercase; cursor: pointer; box-shadow: 4px 4px 0 var(--amarelo); }
+button.pix.ok { background: var(--verde); }
+button.pix.outro { margin-top: 8px; background: var(--branco); color: var(--preto); font-family: "Inter", sans-serif; font-weight: 700;
+  font-size: 15px; text-transform: none; letter-spacing: 0; padding: 11px 10px; box-shadow: none; border-width: 2px; }
+button.pix.outro.ok { background: var(--verde); color: var(--branco); }
+.bonus { margin-top: 10px; background: var(--amarelo); border: 2px dashed var(--preto); border-radius: 12px; padding: 8px 12px; font-size: 15px; transform: rotate(-.6deg); }
+.bonus b { font-family: "Permanent Marker", cursive; font-weight: 400; margin-right: 4px; }
+.flutua { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); width: calc(100% - 28px); max-width: 430px; z-index: 40;
+  background: var(--amarelo); color: var(--preto); border: 3px solid var(--preto); border-radius: 999px; padding: 10px 16px; text-align: center;
+  font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 3px 3px 0 var(--preto); }
+body { padding-bottom: 70px; }
+.loja { text-align: center; font-size: 13px; color: #666; margin-top: 10px; }
+
+/* fim */
+.bloco { margin: 20px 16px 30px; background: var(--amarelo); border: 3px solid var(--preto); border-radius: 20px; padding: 20px; box-shadow: 6px 6px 0 var(--preto); }
+.bloco p { margin: 8px 0 0; }
+.bloco .chave { margin-top: 12px; font-family: "Anton", Impact, sans-serif; font-size: 28px; }
+.carta { padding: 10px 22px 30px; font-family: "Permanent Marker", cursive; font-size: 19px; line-height: 1.45; }
+.carta .ass { color: var(--vermelho); margin-top: 8px; font-size: 24px; }
+.rodape { background: var(--preto); color: #aaa; font-size: 12px; padding: 18px; text-align: center; }
+
+/* aviso de copiado */
+.confete { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 60; }
+.festa { position: fixed; inset: 0; z-index: 55; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  background: rgba(17,17,17,.55); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.festa.on { opacity: 1; pointer-events: auto; }
+.festa img { width: min(78vw, 340px); border: 5px solid var(--branco); border-radius: 18px; box-shadow: 6px 6px 0 var(--amarelo);
+  transform: scale(.6) rotate(-6deg); transition: transform .35s cubic-bezier(.2,1.6,.4,1); }
+.festa.on img { transform: scale(1) rotate(-2deg); }
+.festa b { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 34px; color: var(--amarelo); text-transform: uppercase;
+  text-shadow: 3px 3px 0 var(--preto); transform: rotate(2deg); }
+.toast { position: fixed; left: 50%; bottom: 18px; transform: translate(-50%, 160%); width: calc(100% - 28px); max-width: 430px; background: var(--preto);
+  color: var(--branco); border: 3px solid var(--amarelo); border-radius: 16px; padding: 14px 16px; z-index: 50; transition: transform .25s ease; }
+.toast.on { transform: translate(-50%, 0); }
+.toast b { color: var(--amarelo); font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 22px; display: block; text-transform: uppercase; }
+.toast textarea { display: none; width: 100%; margin-top: 8px; font-size: 12px; height: 70px; }
+.toast.manual textarea { display: block; }
+.toast small { display: none; } .toast.manual small { display: block; }
+</style></head><body>
+
+<header class="hero listras">
+  <div class="placa">
+    <span class="tag">Alice &amp; Lucas apresentam</span>
+    <h1>Chá de<br><span>casa nova</span></h1>
+    <div class="nomes">A casa tá linda. <i>Vazia</i>, mas linda.</div>
+    <p>Vai ter churrasco e você tá convidado. Se quiser dar aquela moral pra encher a casa, tá tudo aí embaixo. Sem pressão nenhuma: o que vale mesmo é você aparecer.</p>
+  </div>
+  
+</header>
+<div class="faixa"><span>Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · </span></div>
+
+<section class="como">
+  <h2>Como funciona<small>é rapidinho, prometo</small></h2>
+  <div class="passos">
+    <div class="passo"><b>1</b><div>Escolhe o que tem a sua cara. Ou o que a Alice mais quer, aí você ganha ponto com ela.</div></div>
+    <div class="passo"><b>2</b><div>Toca em <strong>Quero ajudar</strong>. O Pix já sai copiado com o valor sugerido. Se quiser mandar outro valor, tem botão pra isso também.</div></div>
+    <div class="passo"><b>3</b><div>Abre o banco, <strong>Pix Copia e Cola</strong>, confirma. Pronto, agora você é parte dessa casa.</div></div>
+  </div>
+  <div class="ganha">
+    <h3>Todo presente vem com bônus</h3>
+    <ul>
+      <li>Um vídeo de IA seu, feito por mim. Não garanto que você vai sair bonito.</li>
+      <li>Uma foto nossa usando o seu presente, assim que ele chegar.</li>
+      <li>E alguns presentes têm bônus extra. Fica de olho no 🎁.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="comodo">
+  <header><div class="fundo listras"></div><h2>Sala</h2><p>aqui é Corinthians</p></header>
+  <article class="item dir" id="tv">
+  <div class="palco"><div class="foto"><img src="img/tv.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 500</b></div></div>
+  <h3>Smart TV 65&quot;</h3>
+  <p class="balao">A de 42 vai pro quarto e a sala tá esperando a nova. Todo gol do Timão aqui vai ter um pedaço seu.</p>
+  <div class="bonus"><b>🎁 bônus</b> Convite pra ver o primeiro jogo do Timão nela comigo. Ou do seu time, caso o Timão esteja na Série B. A cerveja é por nossa conta.</div><div class="meta">Fecha com 8 Pix de R$ 500. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126670014br.gov.bcb.pix0114+55319951075350227Cha casa nova - Smart TV 655204000053039865406500.005802BR5917LUCAS INNOCENTINI6006BRASIL62060502TV63045FC1" data-nome="Smart TV 65&quot; · R$ 500">Quero ajudar com R$ 500</button>
+  <button class="pix outro" data-pix="00020126670014br.gov.bcb.pix0114+55319951075350227Cha casa nova - Smart TV 655204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62060502TV63044046" data-nome="Smart TV 65&quot; · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://site.fastshop.com.br/smart-tv-4k-tcl-qd-mini-led-65%E2%80%9D-polegadas-com-hdmi-2-1--dolby-vision-iq--subwoofer--144hz-vrr-e-wi-fi---65c6k-tk65c6kpto_prd/p?idsku=121398" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item esq" id="soundbar">
+  <div class="palco"><div class="foto"><img src="img/soundbar.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 500</b></div></div>
+  <h3>Soundbar</h3>
+  <p class="balao">Pra ouvir o grito de gol. E pros vizinhos ouvirem também.</p>
+  <div class="bonus"><b>🎁 bônus</b> Também entra no convite do primeiro jogo.</div><div class="meta">Fecha com 2 Pix de R$ 500. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126640014br.gov.bcb.pix0114+55319951075350224Cha casa nova - Soundbar5204000053039865406500.005802BR5917LUCAS INNOCENTINI6006BRASIL62120508SOUNDBAR63043EE3" data-nome="Soundbar · R$ 500">Quero ajudar com R$ 500</button>
+  <button class="pix outro" data-pix="00020126640014br.gov.bcb.pix0114+55319951075350224Cha casa nova - Soundbar5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62120508SOUNDBAR6304BE1C" data-nome="Soundbar · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://a.co/d/00vXT9xD" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="quadros">
+  <div class="palco"><div class="foto"><img src="img/quadros.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 355</b></div></div>
+  <h3>Quadros decorativos</h3>
+  <p class="balao">A parede tá pedindo socorro. Ajuda ela.</p>
+  
+  <button class="pix" data-pix="00020126750014br.gov.bcb.pix0114+55319951075350235Cha casa nova - Quadros decorativos5204000053039865406355.005802BR5917LUCAS INNOCENTINI6006BRASIL62110507QUADROS6304A151" data-nome="Quadros decorativos · R$ 355">Quero ajudar com R$ 355</button>
+  <button class="pix outro" data-pix="00020126750014br.gov.bcb.pix0114+55319951075350235Cha casa nova - Quadros decorativos5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62110507QUADROS6304EB32" data-nome="Quadros decorativos · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.westwing.com.br/p/jogo-quadros-sirpa-estampado/MA042CP43BTWWW-1808859.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item esq" id="suporte">
+  <div class="palco"><div class="foto"><img src="img/suporte.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 230</b></div></div>
+  <h3>Suporte para TV</h3>
+  <p class="balao">Porque TV de 65 no chão é coisa de quem acabou de se mudar. No caso, a gente.</p>
+  
+  <button class="pix" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Suporte para TV5204000053039865406230.005802BR5917LUCAS INNOCENTINI6006BRASIL62110507SUPORTE6304EEDD" data-nome="Suporte para TV · R$ 230">Quero ajudar com R$ 230</button>
+  <button class="pix outro" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Suporte para TV5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62110507SUPORTE6304D448" data-nome="Suporte para TV · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.amazon.com.br/dp/B0765NMJQS" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article>
+</section><section class="comodo">
+  <header><div class="fundo listras"></div><h2>Quarto</h2><p>onde a gente se recupera das derrotas</p></header>
+  <article class="item dir" id="ar">
+  <div class="palco"><div class="foto"><img src="img/ar.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 460</b></div></div>
+  <h3>Ar-condicionado</h3>
+  <p class="balao">O verão tá chegando. Quem der isso vira a pessoa favorita da casa até março.</p>
+  <div class="meta">Fecha com 5 Pix de R$ 460. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Ar-condicionado5204000053039865406460.005802BR5917LUCAS INNOCENTINI6006BRASIL62060502AR6304C395" data-nome="Ar-condicionado · R$ 460">Quero ajudar com R$ 460</button>
+  <button class="pix outro" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Ar-condicionado5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62060502AR63045B57" data-nome="Ar-condicionado · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.amazon.com.br/dp/B0GQJQFXWQ" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item esq" id="espelho">
+  <div class="palco"><div class="foto"><img src="img/espelho.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 520</b></div></div>
+  <h3>Espelho de corpo inteiro</h3>
+  <p class="balao">Pra Alice conferir o look. E eu fingir que não confiro.</p>
+  <div class="meta">Fecha com 4 Pix de R$ 520. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126800014br.gov.bcb.pix0114+55319951075350240Cha casa nova - Espelho de corpo inteiro5204000053039865406520.005802BR5917LUCAS INNOCENTINI6006BRASIL62110507ESPELHO630421C2" data-nome="Espelho de corpo inteiro · R$ 520">Quero ajudar com R$ 520</button>
+  <button class="pix outro" data-pix="00020126800014br.gov.bcb.pix0114+55319951075350240Cha casa nova - Espelho de corpo inteiro5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62110507ESPELHO6304EE0E" data-nome="Espelho de corpo inteiro · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.westwing.com.br/p/espelho-de-chao-em-boucle-berlim-off-white/E2619CP77AINWW.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="comoda">
+  <div class="palco"><div class="foto"><img src="img/comoda.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 470</b></div></div>
+  <h3>Cômoda</h3>
+  <p class="balao">Pra roupa sair da cadeira e ir pro lugar dela. A cadeira agradece.</p>
+  <div class="meta">Fecha com 4 Pix de R$ 470. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126620014br.gov.bcb.pix0114+55319951075350222Cha casa nova - Comoda5204000053039865406470.005802BR5917LUCAS INNOCENTINI6006BRASIL62100506COMODA6304BA45" data-nome="Cômoda · R$ 470">Quero ajudar com R$ 470</button>
+  <button class="pix outro" data-pix="00020126620014br.gov.bcb.pix0114+55319951075350222Cha casa nova - Comoda5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62100506COMODA63047DB0" data-nome="Cômoda · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.westwing.com.br/p/comoda-luna---hanover/AR281CP46HSWWW-1959961.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item esq" id="lencol">
+  <div class="palco"><div class="foto"><img src="img/lencol.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 220</b></div></div>
+  <h3>Jogo de lençol queen</h3>
+  <p class="balao">Escolhe a cor. A gente dorme pensando em você (no bom sentido).</p>
+  
+  <button class="pix" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Jogo de lencol queen5204000053039865406220.005802BR5917LUCAS INNOCENTINI6006BRASIL62100506LENCOL6304C800" data-nome="Jogo de lençol queen · R$ 220">Quero ajudar com R$ 220</button>
+  <button class="pix outro" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Jogo de lencol queen5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62100506LENCOL6304D11B" data-nome="Jogo de lençol queen · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.karsten.com.br/lencol-queen-com-elastico-e-fronhas-percal-100-algodao-matiza-rosa-giz-3131159/p" target="_blank" rel="noopener">rosa ↗</a> · <a href="https://www.karsten.com.br/lencol-queen-com-elastico-e-fronhas-100-algodao-matiza-azul-porcelana-3686843/p" target="_blank" rel="noopener">azul ↗</a> · <a href="https://www.karsten.com.br/lencol-queen-com-elastico-e-fronhas-100-algodao-matiza-branco-3042130/p" target="_blank" rel="noopener">branco ↗</a></div>
+</article><article class="item dir" id="protetor">
+  <div class="palco"><div class="foto"><img src="img/protetor.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 100</b></div></div>
+  <h3>Protetor de colchão</h3>
+  <p class="balao">O herói que ninguém vê. Mas todo mundo sente falta.</p>
+  
+  <button class="pix" data-pix="00020126750014br.gov.bcb.pix0114+55319951075350235Cha casa nova - Protetor de colchao5204000053039865406100.005802BR5917LUCAS INNOCENTINI6006BRASIL62120508PROTETOR63043D57" data-nome="Protetor de colchão · R$ 100">Quero ajudar com R$ 100</button>
+  <button class="pix outro" data-pix="00020126750014br.gov.bcb.pix0114+55319951075350235Cha casa nova - Protetor de colchao5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62120508PROTETOR6304AFE8" data-nome="Protetor de colchão · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.amazon.com.br/dp/B09G9BZ2LF" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article>
+</section><section class="comodo">
+  <header><div class="fundo listras"></div><h2>Varanda</h2><p>churrasco, vinho e resenha até tarde</p></header>
+  <article class="item esq" id="poltrona">
+  <div class="palco"><div class="foto vazia">📦</div><div class="selo"><small>sugestão</small><b>R$ 500</b></div></div>
+  <h3>Poltrona para a varanda</h3>
+  <p class="balao">Quando você vier, ela é sua. Pode até deixar o nome escrito.</p>
+  <div class="bonus"><b>🎁 bônus</b> Lugar cativo na varanda. Pra sempre.</div><div class="meta">Fecha com 2 Pix de R$ 500. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126790014br.gov.bcb.pix0114+55319951075350239Cha casa nova - Poltrona para a varanda5204000053039865406500.005802BR5917LUCAS INNOCENTINI6006BRASIL62120508POLTRONA6304D59F" data-nome="Poltrona para a varanda · R$ 500">Quero ajudar com R$ 500</button>
+  <button class="pix outro" data-pix="00020126790014br.gov.bcb.pix0114+55319951075350239Cha casa nova - Poltrona para a varanda5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62120508POLTRONA63040E9E" data-nome="Poltrona para a varanda · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.leroymerlin.com.br/cadeira-poltrona-porto-para-area-externa-em-aluminio-e-corda-nautica_1572129711" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="decanter">
+  <div class="palco"><div class="foto"><img src="img/decanter.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 360</b></div></div>
+  <h3>Decanter</h3>
+  <p class="balao">O vinho fica melhor. Ou pelo menos parece mais caro.</p>
+  <div class="bonus"><b>🎁 bônus</b> A primeira garrafa aberta nele é com você.</div>
+  <button class="pix" data-pix="00020126640014br.gov.bcb.pix0114+55319951075350224Cha casa nova - Decanter5204000053039865406360.005802BR5917LUCAS INNOCENTINI6006BRASIL62120508DECANTER6304FA99" data-nome="Decanter · R$ 360">Quero ajudar com R$ 360</button>
+  <button class="pix outro" data-pix="00020126640014br.gov.bcb.pix0114+55319951075350224Cha casa nova - Decanter5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62120508DECANTER63047FFC" data-nome="Decanter · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.westwing.com.br/p/decanter-gemas-colorida/AL361CP88QLNWW-1980262.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item esq" id="bar">
+  <div class="palco"><div class="foto"><img src="img/bar.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 150</b></div></div>
+  <h3>Jogo para bar</h3>
+  <p class="balao">Pros drinks de quem vier. Ou seja, pra você.</p>
+  <div class="bonus"><b>🎁 bônus</b> O primeiro drink feito nele é seu.</div>
+  <button class="pix" data-pix="00020126690014br.gov.bcb.pix0114+55319951075350229Cha casa nova - Jogo para bar5204000053039865406150.005802BR5917LUCAS INNOCENTINI6006BRASIL62070503BAR6304CA42" data-nome="Jogo para bar · R$ 150">Quero ajudar com R$ 150</button>
+  <button class="pix outro" data-pix="00020126690014br.gov.bcb.pix0114+55319951075350229Cha casa nova - Jogo para bar5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62070503BAR63044D4D" data-nome="Jogo para bar · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.westwing.com.br/p/jogo-para-bar-erlian/MA035CP26WUSWW-2000088.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="portacopos">
+  <div class="palco"><div class="foto"><img src="img/portacopos.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 90</b></div></div>
+  <h3>Porta-copos bordados</h3>
+  <p class="balao">Pro copo não marcar a mesa. A Alice agradece, eu nem ia perceber.</p>
+  
+  <button class="pix" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Porta-copos bordados520400005303986540590.005802BR5917LUCAS INNOCENTINI6006BRASIL62140510PORTACOPOS6304A06F" data-nome="Porta-copos bordados · R$ 90">Quero ajudar com R$ 90</button>
+  <button class="pix outro" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Porta-copos bordados5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62140510PORTACOPOS63046744" data-nome="Porta-copos bordados · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.westwing.com.br/p/jogo-de-porta-copos-bordado---6-pcs/WE292CP33LZFWW-1975829.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article>
+</section><section class="comodo">
+  <header><div class="fundo listras"></div><h2>Home office</h2><p>onde o boleto é pago</p></header>
+  <article class="item esq" id="cadeira">
+  <div class="palco"><div class="foto"><img src="img/cadeira.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 450</b></div></div>
+  <h3>Cadeira ergonômica</h3>
+  <p class="balao">Minhas costas agradecem. Vou mandar áudio agradecendo, já aviso.</p>
+  <div class="meta">Fecha com 4 Pix de R$ 450. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126740014br.gov.bcb.pix0114+55319951075350234Cha casa nova - Cadeira ergonomica5204000053039865406450.005802BR5917LUCAS INNOCENTINI6006BRASIL62110507CADEIRA63049BDD" data-nome="Cadeira ergonômica · R$ 450">Quero ajudar com R$ 450</button>
+  <button class="pix outro" data-pix="00020126740014br.gov.bcb.pix0114+55319951075350234Cha casa nova - Cadeira ergonomica5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62110507CADEIRA63043A70" data-nome="Cadeira ergonômica · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://dt3.com/produtos/cadeira-de-escritorio-ergonomica-dt3-alera/?variant=1053168726" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="monitor">
+  <div class="palco"><div class="foto"><img src="img/monitor.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 340</b></div></div>
+  <h3>Monitor portátil</h3>
+  <p class="balao">Uma tela a mais pra trabalhar de qualquer canto. Ou ver o jogo escondido no meio da reunião.</p>
+  <div class="meta">Fecha com 2 Pix de R$ 340. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126720014br.gov.bcb.pix0114+55319951075350232Cha casa nova - Monitor portatil5204000053039865406340.005802BR5917LUCAS INNOCENTINI6006BRASIL62110507MONITOR63044628" data-nome="Monitor portátil · R$ 340">Quero ajudar com R$ 340</button>
+  <button class="pix outro" data-pix="00020126720014br.gov.bcb.pix0114+55319951075350232Cha casa nova - Monitor portatil5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62110507MONITOR6304289D" data-nome="Monitor portátil · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://br.arzopa.com/products/a1m-17-3-1080p-fhd-ips-monitor-portatil?variant=45967533965556" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article>
+</section><section class="comodo">
+  <header><div class="fundo listras"></div><h2>Cozinha</h2><p>onde tudo começa (e termina na louça)</p></header>
+  <article class="item esq" id="ninja">
+  <div class="palco"><div class="foto"><img src="img/ninja.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 400</b></div></div>
+  <h3>Liquidificador Ninja</h3>
+  <p class="balao">Suco, molho, vitamina e a caipirinha do churrasco.</p>
+  <div class="bonus"><b>🎁 bônus</b> A primeira caipirinha é sua.</div><div class="meta">Fecha com 4 Pix de R$ 400. Mas qualquer valor ajuda, de verdade.</div>
+  <button class="pix" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Liquidificador Ninja5204000053039865406400.005802BR5917LUCAS INNOCENTINI6006BRASIL62090505NINJA630406E3" data-nome="Liquidificador Ninja · R$ 400">Quero ajudar com R$ 400</button>
+  <button class="pix outro" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Liquidificador Ninja5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62090505NINJA63043BA3" data-nome="Liquidificador Ninja · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.amazon.com.br/dp/B0DWBCG2M9" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="nespresso">
+  <div class="palco"><div class="foto"><img src="img/nespresso.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 280</b></div></div>
+  <h3>Calendário do Advento Nespresso</h3>
+  <p class="balao">Um café por dia até o Natal. A gente lembra de você em todos.</p>
+  
+  <button class="pix" data-pix="00020126800014br.gov.bcb.pix0114+55319951075350240Cha casa nova - Calendario do Advento Ne5204000053039865406280.005802BR5917LUCAS INNOCENTINI6006BRASIL62130509NESPRESSO6304FD92" data-nome="Calendário do Advento Nespresso · R$ 280">Quero ajudar com R$ 280</button>
+  <button class="pix outro" data-pix="00020126800014br.gov.bcb.pix0114+55319951075350240Cha casa nova - Calendario do Advento Ne5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62130509NESPRESSO630465F2" data-nome="Calendário do Advento Nespresso · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.nespresso.com/br/pt/order/capsules/original/calendario-do-advento-nespresso-swarovski-original" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item esq" id="descanso">
+  <div class="palco"><div class="foto"><img src="img/descanso.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 210</b></div></div>
+  <h3>Descanso de colher</h3>
+  <p class="balao">É de coração. Literalmente.</p>
+  
+  <button class="pix" data-pix="00020126740014br.gov.bcb.pix0114+55319951075350234Cha casa nova - Descanso de colher5204000053039865406210.005802BR5917LUCAS INNOCENTINI6006BRASIL62120508DESCANSO6304BD2B" data-nome="Descanso de colher · R$ 210">Quero ajudar com R$ 210</button>
+  <button class="pix outro" data-pix="00020126740014br.gov.bcb.pix0114+55319951075350234Cha casa nova - Descanso de colher5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62120508DESCANSO6304D404" data-nome="Descanso de colher · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.amazon.com.br/dp/B08QW6FZ6S" target="_blank" rel="noopener">ver na loja ↗</a></div>
+</article><article class="item dir" id="kitcozinha">
+  <div class="palco"><div class="foto kit"><img src="img/bowls.jpg" alt=""><img src="img/bacias.jpg" alt=""><img src="img/refratarios.jpg" alt=""><img src="img/potes.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 290</b></div></div>
+  <h3>Kit &quot;cadê a bacia?&quot;</h3>
+  <p class="balao">Bowls, bacias, refratários e potes. Aquilo tudo que some na mudança e ninguém sabe onde foi parar.</p>
+  
+  <button class="pix" data-pix="00020126720014br.gov.bcb.pix0114+55319951075350232Cha casa nova - Kit cade a bacia5204000053039865406290.005802BR5917LUCAS INNOCENTINI6006BRASIL62140510KITCOZINHA63046571" data-nome="Kit &quot;cadê a bacia?&quot; · R$ 290">Quero ajudar com R$ 290</button>
+  <button class="pix outro" data-pix="00020126720014br.gov.bcb.pix0114+55319951075350232Cha casa nova - Kit cade a bacia5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62140510KITCOZINHA630466CC" data-nome="Kit &quot;cadê a bacia?&quot; · você digita o valor no banco">ou ajudar com outro valor</button>
+  <div class="loja"><a href="https://www.amazon.com.br/dp/B0C2ZNDWK6" target="_blank" rel="noopener">bowls ↗</a> · <a href="https://www.amazon.com.br/dp/B0H6CX6H8S" target="_blank" rel="noopener">bacias ↗</a> · <a href="https://www.amazon.com.br/dp/B094SGJ7FW" target="_blank" rel="noopener">refratários ↗</a> · <a href="https://a.co/d/04SZEX28" target="_blank" rel="noopener">potes ↗</a></div>
+</article>
+</section>
+
+<section class="bloco" id="livre">
+  <h2>Não achou nada com a sua cara?</h2>
+  <p>Manda o que quiser que a gente coloca onde tá faltando. O vídeo de IA vem do mesmo jeito.</p>
+  <button class="pix" data-pix="00020126530014br.gov.bcb.pix0114+55319951075350213Cha casa nova5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62080504CASA63049125" data-nome="Valor livre · você digita o valor no banco">Quero ajudar</button>
+  <div class="chave">Chave: (31) 99510-7535</div>
+  <p style="font-size:14px">Lucas Innocentini · celular</p>
+</section>
+
+<section class="carta">
+  A gente tá montando essa casa pra receber quem a gente gosta. Então ela também é um pouco sua.<br><br>
+  Ajudando ou não, o importante é você no churrasco. Só não vale faltar.<br>Valeu demais!
+  <div class="ass">Alice e Lucas ♥</div>
+</section>
+
+<footer class="rodape">Preços consultados nas lojas em 27/10/2026 e arredondados pra cobrir variação e frete. Se um presente passar da meta, a diferença vai pro próximo da lista.</footer>
+
+<a class="flutua" href="#livre">Prefere só mandar um valor? Toca aqui 💛</a>
+<canvas class="confete"></canvas>
+<div class="festa"><img alt="Thank you"><b>Valeu demais! 🙌</b></div>
+<div class="toast"><b>Pix copiado ✓</b><span class="qual"></span><br>Agora abre o banco → Pix → <strong>Copia e Cola</strong> → confirma. Valeu demais!<br><small>Não copiou? Segura o código abaixo e copia.</small><textarea readonly></textarea></div>
+<script>
+const toast = document.querySelector('.toast');
+const festa = document.querySelector('.festa');
+const gif = 'img/obrigado.gif';
+window.addEventListener('load', () => { new Image().src = gif; });
+let tf;
+function comemora() {
+  confete();
+  const img = festa.querySelector('img');
+  img.src = gif + '?' + Date.now();  // reinicia o gif a cada clique
+  festa.classList.add('on');
+  clearTimeout(tf); tf = setTimeout(() => festa.classList.remove('on'), 2600);
+}
+festa.addEventListener('click', () => festa.classList.remove('on'));
+function confete() {
+  const cv = document.querySelector('.confete'), ctx = cv.getContext('2d'), dpr = window.devicePixelRatio || 1;
+  cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+  const cores = ['#111', '#fff', '#FFE14D', '#E5322D', '#1DB954'];
+  const ps = Array.from({length: 160}, (_, i) => ({
+    x: innerWidth * (i % 2 ? .15 : .85), y: innerHeight * .8,
+    vx: (i % 2 ? 1 : -1) * (2 + Math.random() * 7), vy: -(9 + Math.random() * 11),
+    w: 6 + Math.random() * 6, h: 4 + Math.random() * 6, r: Math.random() * 6, vr: (Math.random() - .5) * .4,
+    c: cores[i % cores.length]
+  }));
+  const t0 = performance.now();
+  (function quadro(t) {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    for (const p of ps) {
+      p.vy += .32; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c;
+      ctx.strokeStyle = '#111'; ctx.lineWidth = .6; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.strokeRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore();
+    }
+    if (t - t0 < 2800) requestAnimationFrame(quadro); else ctx.clearRect(0, 0, innerWidth, innerHeight);
+  })(t0);
+}
+let t;
+function avisa(nome, codigo, ok) {
+  toast.querySelector('.qual').textContent = nome;
+  toast.querySelector('textarea').value = codigo;
+  toast.classList.toggle('manual', !ok);
+  toast.classList.add('on');
+  clearTimeout(t); t = setTimeout(() => toast.classList.remove('on'), ok ? 9000 : 20000);
+}
+async function copia(txt) {
+  try { await navigator.clipboard.writeText(txt); return true; } catch (e) {}
+  const a = document.createElement('textarea'); a.value = txt; a.style.position = 'fixed'; a.style.opacity = '0';
+  document.body.appendChild(a); a.select();
+  let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+  a.remove(); return ok;
+}
+document.querySelectorAll('button.pix').forEach(b => b.addEventListener('click', async () => {
+  const ok = await copia(b.dataset.pix);
+  comemora();
+  avisa(b.dataset.nome, b.dataset.pix, ok);
+  if (ok) { const txt = b.textContent; b.classList.add('ok'); b.textContent = 'Copiado! Agora cola no banco 🙌'; setTimeout(() => { b.classList.remove('ok'); b.textContent = txt; }, 4000); }
+}));
+toast.addEventListener('click', e => { if (e.target.tagName !== 'TEXTAREA') toast.classList.remove('on'); });
+</script>
+</body></html>
