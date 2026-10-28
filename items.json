@@ -77,18 +77,11 @@
   "img": "img/decanter.jpg"
  },
  {
-  "slug": "bar",
-  "nome": "Jogo para bar",
+  "slug": "kitbar",
+  "nome": "Kit bar da varanda",
   "partes": 1,
-  "valor": 150,
+  "valor": 240,
   "img": "img/bar.jpg"
- },
- {
-  "slug": "portacopos",
-  "nome": "Porta-copos bordados",
-  "partes": 1,
-  "valor": 90,
-  "img": "img/portacopos.jpg"
  },
  {
   "slug": "cadeira",
