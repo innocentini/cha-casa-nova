@@ -128,6 +128,14 @@ body { padding-bottom: 70px; }
 .bloco { margin: 20px 16px 30px; background: var(--amarelo); border: 3px solid var(--preto); border-radius: 20px; padding: 20px; box-shadow: 6px 6px 0 var(--preto); }
 .bloco p { margin: 8px 0 0; }
 .bloco .chave { margin-top: 12px; font-family: "Anton", Impact, sans-serif; font-size: 28px; }
+.polaroid { width: 78%; margin: -8px auto 36px; background: var(--branco); padding: 10px 10px 4px; border: 3px solid var(--preto);
+  box-shadow: 5px 5px 0 var(--preto); position: relative; }
+.polaroid.esq { transform: rotate(-3deg); } .polaroid.dir { transform: rotate(3deg); }
+.polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; width: 80px; height: 22px; margin-left: -40px;
+  background: rgba(255,225,77,.85); transform: rotate(-3deg); }
+.polaroid img { display: block; width: 100%; max-height: 340px; object-fit: cover; }
+.polaroid figcaption { font-family: "Permanent Marker", cursive; font-size: 16px; line-height: 1.2; text-align: center; padding: 8px 4px 6px; }
+.como .polaroid { margin: 26px auto 10px; }
 .carta { padding: 10px 22px 30px; font-family: "Permanent Marker", cursive; font-size: 19px; line-height: 1.45; }
 .carta .ass { color: var(--vermelho); margin-top: 8px; font-size: 24px; }
 .rodape { background: var(--preto); color: #aaa; font-size: 12px; padding: 18px; text-align: center; }
@@ -178,6 +186,7 @@ body { padding-bottom: 70px; }
       <li>E alguns presentes têm bônus extra. Fica de olho no 🎁.</li>
     </ul>
   </div>
+  <figure class="polaroid dir"><img src="img/amigos-05.jpg" alt="" loading="lazy"><figcaption>o vídeo de IA vai ficar mais ou menos assim. ou pior</figcaption></figure>
 </section>
 
 <section class="comodo">
@@ -202,7 +211,7 @@ body { padding-bottom: 70px; }
   <button class="pix" data-pix="00020126670014br.gov.bcb.pix0114+55319951075350227Cha casa nova - Smart TV 655204000053039865406335.005802BR5917LUCAS INNOCENTINI6006BRASIL62060502TV63045C54" data-nome="Smart TV 65&quot; · R$ 335">Quero ajudar com R$ 335</button>
   <button class="pix outro" data-pix="00020126670014br.gov.bcb.pix0114+55319951075350227Cha casa nova - Smart TV 655204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62060502TV63044046" data-nome="Smart TV 65&quot; · você digita o valor no banco">ou ajudar com outro valor</button>
   <div class="loja"><a href="https://site.fastshop.com.br/smart-tv-4k-tcl-qd-mini-led-65%E2%80%9D-polegadas-com-hdmi-2-1--dolby-vision-iq--subwoofer--144hz-vrr-e-wi-fi---65c6k-tk65c6kpto_prd/p?idsku=121398" target="_blank" rel="noopener">ver na loja ↗</a></div>
-</article><article class="item dir" id="quadros" data-partes="2">
+</article><figure class="polaroid esq"><img src="img/amigos-06.jpg" alt="" loading="lazy"><figcaption>até benfiquista é bem-vindo no jogo do Timão</figcaption></figure><article class="item dir" id="quadros" data-partes="2">
   <div class="palco"><div class="foto"><img src="img/quadros.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 180</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Quadros decorativos</h3>
   <p class="balao">A parede tá pedindo socorro. Ajuda ela.</p>
@@ -212,7 +221,7 @@ body { padding-bottom: 70px; }
   <button class="pix" data-pix="00020126750014br.gov.bcb.pix0114+55319951075350235Cha casa nova - Quadros decorativos5204000053039865406180.005802BR5917LUCAS INNOCENTINI6006BRASIL62110507QUADROS6304E24B" data-nome="Quadros decorativos · R$ 180">Quero ajudar com R$ 180</button>
   <button class="pix outro" data-pix="00020126750014br.gov.bcb.pix0114+55319951075350235Cha casa nova - Quadros decorativos5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62110507QUADROS6304EB32" data-nome="Quadros decorativos · você digita o valor no banco">ou ajudar com outro valor</button>
   <div class="loja"><a href="https://www.westwing.com.br/p/jogo-quadros-sirpa-estampado/MA042CP43BTWWW-1808859.html" target="_blank" rel="noopener">ver na loja ↗</a></div>
-</article><article class="item esq" id="suporte" data-partes="1">
+</article><figure class="polaroid dir"><img src="img/amigos-02.jpg" alt="" loading="lazy"><figcaption>lugar no sofá: reservadíssimo</figcaption></figure><article class="item esq" id="suporte" data-partes="1">
   <div class="palco"><div class="foto"><img src="img/suporte.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 230</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Suporte para TV</h3>
   <p class="balao">Porque TV de 65 no chão é coisa de quem acabou de se mudar. No caso, a gente.</p>
@@ -235,7 +244,7 @@ body { padding-bottom: 70px; }
   <button class="pix" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Ar-condicionado5204000053039865406230.005802BR5917LUCAS INNOCENTINI6006BRASIL62060502AR6304E552" data-nome="Ar-condicionado · R$ 230">Quero ajudar com R$ 230</button>
   <button class="pix outro" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Ar-condicionado5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62060502AR63045B57" data-nome="Ar-condicionado · você digita o valor no banco">ou ajudar com outro valor</button>
   <div class="loja"><a href="https://www.amazon.com.br/dp/B0GQJQFXWQ" target="_blank" rel="noopener">ver na loja ↗</a></div>
-</article><article class="item esq" id="protetor" data-partes="1">
+</article><figure class="polaroid dir"><img src="img/amigos-03.jpg" alt="" loading="lazy"><figcaption>a gente no calor. por isso o ar-condicionado</figcaption></figure><article class="item esq" id="protetor" data-partes="1">
   <div class="palco"><div class="foto"><img src="img/protetor.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 100</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Protetor de colchão</h3>
   <p class="balao">O herói que ninguém vê. Mas todo mundo sente falta.</p>
@@ -321,7 +330,7 @@ body { padding-bottom: 70px; }
   <button class="pix" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Liquidificador Ninja5204000053039865406135.005802BR5917LUCAS INNOCENTINI6006BRASIL62090505NINJA6304655D" data-nome="Liquidificador Ninja · R$ 135">Quero ajudar com R$ 135</button>
   <button class="pix outro" data-pix="00020126760014br.gov.bcb.pix0114+55319951075350236Cha casa nova - Liquidificador Ninja5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62090505NINJA63043BA3" data-nome="Liquidificador Ninja · você digita o valor no banco">ou ajudar com outro valor</button>
   <div class="loja"><a href="https://www.amazon.com.br/dp/B0DWBCG2M9" target="_blank" rel="noopener">ver na loja ↗</a></div>
-</article><article class="item esq" id="nespresso" data-partes="1">
+</article><figure class="polaroid dir"><img src="img/amigos-04.jpg" alt="" loading="lazy"><figcaption>o tipo de noite que o Ninja vai patrocinar</figcaption></figure><article class="item esq" id="nespresso" data-partes="1">
   <div class="palco"><div class="foto"><img src="img/nespresso.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 280</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Calendário do Advento Nespresso</h3>
   <p class="balao">Um café por dia até o Natal. A gente lembra de você em todos.</p>
@@ -354,7 +363,7 @@ body { padding-bottom: 70px; }
   <button class="pix" data-pix="00020126790014br.gov.bcb.pix0114+55319951075350239Cha casa nova - Poltrona para a varanda5204000053039865406335.005802BR5917LUCAS INNOCENTINI6006BRASIL62120508POLTRONA63041EA2" data-nome="Poltrona para a varanda · R$ 335">Quero ajudar com R$ 335</button>
   <button class="pix outro" data-pix="00020126790014br.gov.bcb.pix0114+55319951075350239Cha casa nova - Poltrona para a varanda5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62120508POLTRONA63040E9E" data-nome="Poltrona para a varanda · você digita o valor no banco">ou ajudar com outro valor</button>
   <div class="loja"><a href="https://www.leroymerlin.com.br/cadeira-poltrona-porto-para-area-externa-em-aluminio-e-corda-nautica_1572129711" target="_blank" rel="noopener">ver na loja ↗</a></div>
-</article><article class="item dir" id="decanter" data-partes="3">
+</article><figure class="polaroid esq"><img src="img/amigos-01.jpg" alt="" loading="lazy"><figcaption>fechando negócio: eu dou a cerveja, você dá a poltrona</figcaption></figure><article class="item dir" id="decanter" data-partes="3">
   <div class="palco"><div class="foto"><img src="img/decanter.jpg" alt=""></div><div class="selo"><small>sugestão</small><b>R$ 120</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Decanter</h3>
   <p class="balao">O vinho fica melhor. Ou pelo menos parece mais caro.</p>
@@ -395,6 +404,7 @@ body { padding-bottom: 70px; }
   <p style="font-size:14px">Lucas Innocentini · celular</p>
 </section>
 
+<figure class="polaroid esq"><img src="img/amigos-07.jpg" alt="" loading="lazy"><figcaption>os de sempre, desde sempre</figcaption></figure>
 <section class="carta">
   Antes de você ir: nada aqui é obrigação. De verdade.<br><br>
   A gente tá feliz demais só de saber que você vai estar com a gente nesse começo. Se der pra ajudar, a gente agradece de coração. Se não der, vem do mesmo jeito, que o churrasco com você é a parte mais importante.<br><br>
