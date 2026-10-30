@@ -1,24 +1,17 @@
 [
  {
-  "slug": "tv",
-  "nome": "Smart TV 65\"",
-  "partes": 8,
-  "valor": 500,
-  "img": "img/tv.jpg"
- },
- {
-  "slug": "soundbar",
-  "nome": "Soundbar",
-  "partes": 2,
-  "valor": 500,
-  "img": "img/soundbar.jpg"
- },
- {
   "slug": "quadros",
   "nome": "Quadros decorativos",
-  "partes": 1,
-  "valor": 355,
+  "partes": 2,
+  "valor": 180,
   "img": "img/quadros.jpg"
+ },
+ {
+  "slug": "tv",
+  "nome": "Smart TV 65\"",
+  "partes": 12,
+  "valor": 335,
+  "img": "img/tv.jpg"
  },
  {
   "slug": "suporte",
@@ -28,32 +21,18 @@
   "img": "img/suporte.jpg"
  },
  {
+  "slug": "soundbar",
+  "nome": "Soundbar",
+  "partes": 6,
+  "valor": 170,
+  "img": "img/soundbar.jpg"
+ },
+ {
   "slug": "ar",
   "nome": "Ar-condicionado",
-  "partes": 5,
-  "valor": 460,
+  "partes": 7,
+  "valor": 330,
   "img": "img/ar.jpg"
- },
- {
-  "slug": "espelho",
-  "nome": "Espelho de corpo inteiro",
-  "partes": 4,
-  "valor": 520,
-  "img": "img/espelho.jpg"
- },
- {
-  "slug": "comoda",
-  "nome": "Cômoda",
-  "partes": 4,
-  "valor": 470,
-  "img": "img/comoda.jpg"
- },
- {
-  "slug": "lencol",
-  "nome": "Jogo de lençol queen",
-  "partes": 1,
-  "valor": 220,
-  "img": "img/lencol.jpg"
  },
  {
   "slug": "protetor",
@@ -63,18 +42,25 @@
   "img": "img/protetor.jpg"
  },
  {
-  "slug": "poltrona",
-  "nome": "Poltrona para a varanda",
-  "partes": 2,
-  "valor": 500,
-  "img": "img/poltrona.jpg"
+  "slug": "espelho",
+  "nome": "Espelho de corpo inteiro",
+  "partes": 6,
+  "valor": 345,
+  "img": "img/espelho.jpg"
  },
  {
-  "slug": "decanter",
-  "nome": "Decanter",
+  "slug": "lencol",
+  "nome": "Jogo de lençol queen",
   "partes": 1,
-  "valor": 360,
-  "img": "img/decanter.jpg"
+  "valor": 220,
+  "img": "img/lencol.jpg"
+ },
+ {
+  "slug": "comoda",
+  "nome": "Cômoda",
+  "partes": 6,
+  "valor": 315,
+  "img": "img/comoda.jpg"
  },
  {
   "slug": "kitbar",
@@ -84,32 +70,53 @@
   "img": "img/bar.jpg"
  },
  {
-  "slug": "cadeira",
-  "nome": "Cadeira ergonômica",
-  "partes": 4,
-  "valor": 450,
-  "img": "img/cadeira.jpg"
+  "slug": "poltrona",
+  "nome": "Poltrona para a varanda",
+  "partes": 3,
+  "valor": 335,
+  "img": "img/poltrona.jpg"
+ },
+ {
+  "slug": "petisqueira",
+  "nome": "Petisqueira de legumes",
+  "partes": 1,
+  "valor": 230,
+  "img": "img/petisqueira.jpg"
+ },
+ {
+  "slug": "decanter",
+  "nome": "Decanter",
+  "partes": 2,
+  "valor": 180,
+  "img": "img/decanter.jpg"
  },
  {
   "slug": "monitor",
   "nome": "Monitor portátil",
-  "partes": 2,
-  "valor": 340,
+  "partes": 4,
+  "valor": 170,
   "img": "img/monitor.jpg"
+ },
+ {
+  "slug": "cadeira",
+  "nome": "Cadeira ergonômica",
+  "partes": 8,
+  "valor": 225,
+  "img": "img/cadeira.jpg"
  },
  {
   "slug": "ninja",
   "nome": "Liquidificador Ninja",
-  "partes": 4,
-  "valor": 400,
+  "partes": 10,
+  "valor": 160,
   "img": "img/ninja.jpg"
  },
  {
-  "slug": "nespresso",
-  "nome": "Calendário do Advento Nespresso",
+  "slug": "kitcozinha",
+  "nome": "Kit \"cadê a bacia?\"",
   "partes": 1,
-  "valor": 280,
-  "img": "img/nespresso.jpg"
+  "valor": 290,
+  "img": "img/bowls.jpg"
  },
  {
   "slug": "descanso",
@@ -119,10 +126,10 @@
   "img": "img/descanso.jpg"
  },
  {
-  "slug": "kitcozinha",
-  "nome": "Kit \"cadê a bacia?\"",
+  "slug": "nespresso",
+  "nome": "Calendário do Advento Nespresso",
   "partes": 1,
-  "valor": 290,
-  "img": "img/bowls.jpg"
+  "valor": 280,
+  "img": "img/nespresso.jpg"
  }
 ]
