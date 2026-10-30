@@ -1,10 +1,10 @@
 [
  {
-  "slug": "quadros",
-  "nome": "Quadros decorativos",
-  "partes": 2,
-  "valor": 180,
-  "img": "img/quadros.jpg"
+  "slug": "soundbar",
+  "nome": "Soundbar",
+  "partes": 8,
+  "valor": 125,
+  "img": "img/soundbar.jpg"
  },
  {
   "slug": "tv",
@@ -14,18 +14,18 @@
   "img": "img/tv.jpg"
  },
  {
+  "slug": "quadros",
+  "nome": "Quadros decorativos",
+  "partes": 2,
+  "valor": 180,
+  "img": "img/quadros.jpg"
+ },
+ {
   "slug": "suporte",
   "nome": "Suporte para TV",
   "partes": 1,
   "valor": 230,
   "img": "img/suporte.jpg"
- },
- {
-  "slug": "soundbar",
-  "nome": "Soundbar",
-  "partes": 8,
-  "valor": 125,
-  "img": "img/soundbar.jpg"
  },
  {
   "slug": "ar",
@@ -63,34 +63,6 @@
   "img": "img/comoda.jpg"
  },
  {
-  "slug": "kitbar",
-  "nome": "Kit bar da varanda",
-  "partes": 1,
-  "valor": 240,
-  "img": "img/bar.jpg"
- },
- {
-  "slug": "poltrona",
-  "nome": "Poltrona para a varanda",
-  "partes": 3,
-  "valor": 335,
-  "img": "img/poltrona.jpg"
- },
- {
-  "slug": "petisqueira",
-  "nome": "Petisqueira de legumes",
-  "partes": 1,
-  "valor": 230,
-  "img": "img/petisqueira.jpg"
- },
- {
-  "slug": "decanter",
-  "nome": "Decanter",
-  "partes": 3,
-  "valor": 120,
-  "img": "img/decanter.jpg"
- },
- {
   "slug": "monitor",
   "nome": "Monitor portátil",
   "partes": 6,
@@ -105,6 +77,13 @@
   "img": "img/cadeira.jpg"
  },
  {
+  "slug": "kitcozinha",
+  "nome": "Kit \"cadê a bacia?\"",
+  "partes": 1,
+  "valor": 290,
+  "img": "img/bowls.jpg"
+ },
+ {
   "slug": "ninja",
   "nome": "Liquidificador Ninja",
   "partes": 12,
@@ -112,11 +91,11 @@
   "img": "img/ninja.jpg"
  },
  {
-  "slug": "kitcozinha",
-  "nome": "Kit \"cadê a bacia?\"",
+  "slug": "nespresso",
+  "nome": "Calendário do Advento Nespresso",
   "partes": 1,
-  "valor": 290,
-  "img": "img/bowls.jpg"
+  "valor": 280,
+  "img": "img/nespresso.jpg"
  },
  {
   "slug": "descanso",
@@ -126,10 +105,31 @@
   "img": "img/descanso.jpg"
  },
  {
-  "slug": "nespresso",
-  "nome": "Calendário do Advento Nespresso",
+  "slug": "poltrona",
+  "nome": "Poltrona para a varanda",
+  "partes": 3,
+  "valor": 335,
+  "img": "img/poltrona.jpg"
+ },
+ {
+  "slug": "decanter",
+  "nome": "Decanter",
+  "partes": 3,
+  "valor": 120,
+  "img": "img/decanter.jpg"
+ },
+ {
+  "slug": "kitbar",
+  "nome": "Kit bar da varanda",
   "partes": 1,
-  "valor": 280,
-  "img": "img/nespresso.jpg"
+  "valor": 240,
+  "img": "img/bar.jpg"
+ },
+ {
+  "slug": "petisqueira",
+  "nome": "Petisqueira de legumes",
+  "partes": 1,
+  "valor": 230,
+  "img": "img/petisqueira.jpg"
  }
 ]
