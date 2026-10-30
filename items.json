@@ -23,15 +23,15 @@
  {
   "slug": "soundbar",
   "nome": "Soundbar",
-  "partes": 6,
-  "valor": 170,
+  "partes": 8,
+  "valor": 125,
   "img": "img/soundbar.jpg"
  },
  {
   "slug": "ar",
   "nome": "Ar-condicionado",
-  "partes": 7,
-  "valor": 330,
+  "partes": 10,
+  "valor": 230,
   "img": "img/ar.jpg"
  },
  {
@@ -86,29 +86,29 @@
  {
   "slug": "decanter",
   "nome": "Decanter",
-  "partes": 2,
-  "valor": 180,
+  "partes": 3,
+  "valor": 120,
   "img": "img/decanter.jpg"
  },
  {
   "slug": "monitor",
   "nome": "Monitor portátil",
-  "partes": 4,
-  "valor": 170,
+  "partes": 6,
+  "valor": 115,
   "img": "img/monitor.jpg"
  },
  {
   "slug": "cadeira",
   "nome": "Cadeira ergonômica",
-  "partes": 8,
-  "valor": 225,
+  "partes": 12,
+  "valor": 150,
   "img": "img/cadeira.jpg"
  },
  {
   "slug": "ninja",
   "nome": "Liquidificador Ninja",
-  "partes": 10,
-  "valor": 160,
+  "partes": 12,
+  "valor": 135,
   "img": "img/ninja.jpg"
  },
  {
