@@ -140,6 +140,7 @@ body { padding-bottom: 70px; }
 .mural h2 { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 30px; text-transform: uppercase; line-height: 1.05; }
 .mural textarea, .mural input { display: block; width: 100%; margin-top: 12px; padding: 12px; font: inherit; font-size: 16px; border: 3px solid var(--preto); border-radius: 12px; background: #FFFBEA; }
 .mural textarea { min-height: 110px; resize: vertical; }
+.mural .intro { margin: 10px 0 0; font-size: 16px; line-height: 1.4; }
 .mural button { margin-top: 14px; width: 100%; padding: 14px; font-family: "Anton", Impact, sans-serif; font-size: 20px; text-transform: uppercase; background: var(--preto); color: var(--amarelo); border: 3px solid var(--preto); border-radius: 12px; }
 .mural small { display: block; margin-top: 8px; font-size: 13px; opacity: .7; }
 .carta { padding: 10px 22px 30px; font-family: "Permanent Marker", cursive; font-size: 19px; line-height: 1.45; }
@@ -178,11 +179,12 @@ body { padding-bottom: 70px; }
 <div class="faixa"><span>Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · </span></div>
 
 <section class="mural">
-  <h2>Escreva sua mensagem pra colocarmos no mural da casa</h2>
-  <textarea id="muralMsg" placeholder="Escreve aqui o seu recado pra gente..."></textarea>
-  <input id="muralNome" type="text" placeholder="Assina com o seu nome" autocomplete="name">
-  <button type="button" id="muralEnviar">Enviar recado</button>
-  <small id="muralStatus">A gente imprime e cola no mural da casa.</small>
+  <h2>Deixa uma mensagem pra gente</h2>
+  <p class="intro">No dia, a gente revela uma foto com você. Sua mensagem vai ficar escrita atrás dela, guardada na nossa casa nova.</p>
+  <textarea id="muralMsg" placeholder="Escreve com calma, do jeito que você falaria pra gente..."></textarea>
+  <input id="muralNome" type="text" placeholder="Assina aqui (seu nome)" autocomplete="name">
+  <button type="button" id="muralEnviar">Guardar minha mensagem</button>
+  <small id="muralStatus">Só a gente vai ler.</small>
 </section>
 
 <section class="como">
@@ -506,15 +508,15 @@ toast.addEventListener('click', e => { if (e.target.tagName !== 'TEXTAREA') toas
 document.getElementById('muralEnviar').addEventListener('click', async () => {
   const btn = document.getElementById('muralEnviar'), st = document.getElementById('muralStatus');
   const msg = document.getElementById('muralMsg'), nome = document.getElementById('muralNome');
-  if (!msg.value.trim() || !nome.value.trim()) { st.textContent = 'Escreve a mensagem e assina com o seu nome 😉'; return; }
+  if (!msg.value.trim() || !nome.value.trim()) { st.textContent = 'Falta a mensagem e o seu nome pra assinar 😉'; return; }
   btn.disabled = true; btn.textContent = 'Enviando...';
   const dados = new URLSearchParams({ 'entry.30679599': msg.value.trim(), 'entry.2118512150': nome.value.trim() });
   try {
     await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdOQrow4ykayyBz_I-qmkuxBvoCeZwE1Dg8hHoRbfWODkACTQ/formResponse', { method: 'POST', mode: 'no-cors', body: dados });
-    msg.value = ''; nome.value = ''; btn.textContent = 'Recado enviado ✓';
-    st.textContent = 'Valeu! Seu recado vai pro mural da casa. ♥';
+    msg.value = ''; nome.value = ''; btn.textContent = 'Mensagem guardada ✓';
+    st.textContent = 'Recebemos. Vai ficar atrás da nossa foto. ♥';
   } catch (err) {
-    btn.disabled = false; btn.textContent = 'Enviar recado';
+    btn.disabled = false; btn.textContent = 'Guardar minha mensagem';
     st.textContent = 'Não foi dessa vez. Tenta de novo?';
   }
 });
