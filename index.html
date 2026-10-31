@@ -181,8 +181,8 @@ body { padding-bottom: 70px; }
   <h2>Escreva sua mensagem pra colocarmos no mural da casa</h2>
   <textarea id="muralMsg" placeholder="Escreve aqui o seu recado pra gente..."></textarea>
   <input id="muralNome" type="text" placeholder="Assina com o seu nome" autocomplete="name">
-  <button type="button" id="muralEnviar">Enviar pelo WhatsApp</button>
-  <small>Abre o WhatsApp com a mensagem pronta pra mandar pro Lucas. A gente imprime e cola no mural.</small>
+  <button type="button" id="muralEnviar">Enviar recado</button>
+  <small id="muralStatus">A gente imprime e cola no mural da casa.</small>
 </section>
 
 <section class="como">
@@ -258,7 +258,7 @@ body { padding-bottom: 70px; }
   <button class="pix" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Ar-condicionado5204000053039865406230.005802BR5917LUCAS INNOCENTINI6006BRASIL62060502AR6304E552" data-nome="Ar-condicionado · R$ 230">Quero ajudar com R$ 230</button>
   <button class="pix outro" data-pix="00020126710014br.gov.bcb.pix0114+55319951075350231Cha casa nova - Ar-condicionado5204000053039865802BR5917LUCAS INNOCENTINI6006BRASIL62060502AR63045B57" data-nome="Ar-condicionado · você digita o valor no banco">ou ajudar com outro valor</button>
   <div class="loja"><a href="https://www.amazon.com.br/dp/B0GQJQFXWQ" target="_blank" rel="noopener">ver na loja ↗</a></div>
-</article><figure class="polaroid dir"><img src="img/casal-01.jpg" alt="" loading="lazy"><figcaption>a gente no calor. por isso o ar-condicionado</figcaption></figure><article class="item esq" id="protetor" data-partes="1">
+</article><article class="item esq" id="protetor" data-partes="1">
   <div class="palco"><div class="foto"><img src="img/protetor.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 100</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Protetor de colchão</h3>
   <p class="balao">O herói que ninguém vê. Mas todo mundo sente falta.</p>
@@ -323,7 +323,7 @@ body { padding-bottom: 70px; }
   <div class="loja"><a href="https://dt3.com/produtos/cadeira-de-escritorio-ergonomica-dt3-alera/?variant=1053168726" target="_blank" rel="noopener">ver na loja ↗</a></div>
 </article>
 </section><section class="comodo">
-  <header><div class="fundo listras"></div><h2>Cozinha</h2><p>onde tudo começa (e termina na louça)</p></header>
+  <header class="com-adesivo"><div class="fundo listras"></div><h2>Cozinha</h2><p>onde tudo começa (e termina na louça)</p><div class="adesivo sec"><img src="img/adesivo-slush-casal.png" alt="Alice e Lucas"><span class="fala">dia quente pede algo gelado, né?</span></div></header>
   <article class="item esq" id="kitcozinha" data-partes="1">
   <div class="palco"><div class="foto kit"><img src="img/bowls.jpg" alt=""><img src="img/bacias.jpg" alt=""><img src="img/refratarios.jpg" alt=""><img src="img/potes.jpg" alt=""></div><div class="selo inteiro"><small>o presente</small><b>R$ 290</b></div><div class="carimbo">Já ganhamos ✓</div></div>
   <h3>Kit &quot;cadê a bacia?&quot;</h3>
@@ -503,12 +503,20 @@ document.querySelectorAll('button.pix').forEach(b => b.addEventListener('click',
   if (ok) { const txt = b.textContent; b.classList.add('ok'); b.textContent = 'Copiado! Agora cola no banco 🙌'; setTimeout(() => { b.classList.remove('ok'); b.textContent = txt; }, 4000); }
 }));
 toast.addEventListener('click', e => { if (e.target.tagName !== 'TEXTAREA') toast.classList.remove('on'); });
-document.getElementById('muralEnviar').addEventListener('click', () => {
-  const msg = document.getElementById('muralMsg').value.trim();
-  const nome = document.getElementById('muralNome').value.trim();
-  if (!msg || !nome) { alert('Escreve a mensagem e assina com o seu nome 😉'); return; }
-  const texto = 'Mensagem pro mural da casa nova:\n\n' + msg + '\n\n— ' + nome;
-  window.open('https://wa.me/5531995107535?text=' + encodeURIComponent(texto), '_blank');
+document.getElementById('muralEnviar').addEventListener('click', async () => {
+  const btn = document.getElementById('muralEnviar'), st = document.getElementById('muralStatus');
+  const msg = document.getElementById('muralMsg'), nome = document.getElementById('muralNome');
+  if (!msg.value.trim() || !nome.value.trim()) { st.textContent = 'Escreve a mensagem e assina com o seu nome 😉'; return; }
+  btn.disabled = true; btn.textContent = 'Enviando...';
+  const dados = new URLSearchParams({ 'entry.30679599': msg.value.trim(), 'entry.2118512150': nome.value.trim() });
+  try {
+    await fetch('https://docs.google.com/forms/d/e/1FAIpQLSdOQrow4ykayyBz_I-qmkuxBvoCeZwE1Dg8hHoRbfWODkACTQ/formResponse', { method: 'POST', mode: 'no-cors', body: dados });
+    msg.value = ''; nome.value = ''; btn.textContent = 'Recado enviado ✓';
+    st.textContent = 'Valeu! Seu recado vai pro mural da casa. ♥';
+  } catch (err) {
+    btn.disabled = false; btn.textContent = 'Enviar recado';
+    st.textContent = 'Não foi dessa vez. Tenta de novo?';
+  }
 });
 </script>
 </body></html>
