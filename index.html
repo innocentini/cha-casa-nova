@@ -136,6 +136,12 @@ body { padding-bottom: 70px; }
 .polaroid img { display: block; width: 100%; max-height: 340px; object-fit: cover; object-position: center 25%; }
 .polaroid figcaption { font-family: "Permanent Marker", cursive; font-size: 16px; line-height: 1.2; text-align: center; padding: 8px 4px 6px; }
 .como .polaroid { margin: 26px auto 10px; }
+.mural { margin: 22px 16px 10px; background: var(--branco); border: 3px solid var(--preto); border-radius: 20px; padding: 20px; box-shadow: 6px 6px 0 var(--amarelo); }
+.mural h2 { font-family: "Anton", Impact, sans-serif; font-weight: 400; font-size: 30px; text-transform: uppercase; line-height: 1.05; }
+.mural textarea, .mural input { display: block; width: 100%; margin-top: 12px; padding: 12px; font: inherit; font-size: 16px; border: 3px solid var(--preto); border-radius: 12px; background: #FFFBEA; }
+.mural textarea { min-height: 110px; resize: vertical; }
+.mural button { margin-top: 14px; width: 100%; padding: 14px; font-family: "Anton", Impact, sans-serif; font-size: 20px; text-transform: uppercase; background: var(--preto); color: var(--amarelo); border: 3px solid var(--preto); border-radius: 12px; }
+.mural small { display: block; margin-top: 8px; font-size: 13px; opacity: .7; }
 .carta { padding: 10px 22px 30px; font-family: "Permanent Marker", cursive; font-size: 19px; line-height: 1.45; }
 .carta .ass { color: var(--vermelho); margin-top: 8px; font-size: 24px; }
 .rodape { background: var(--preto); color: #aaa; font-size: 12px; padding: 18px; text-align: center; }
@@ -169,7 +175,15 @@ body { padding-bottom: 70px; }
   </div>
   <div class="adesivo topo"><img src="img/adesivo-estadio-casal.png" alt="Alice e Lucas"></div>
 </header>
-<div class="faixa"><span>Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · <b>Qualquer valor é bem-vindo</b> · </span></div>
+<div class="faixa"><span>Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · Bora encher essa casa · <b>Vai Corinthians</b> · Churrasco confirmado · </span></div>
+
+<section class="mural">
+  <h2>Escreva sua mensagem pra colocarmos no mural da casa</h2>
+  <textarea id="muralMsg" placeholder="Escreve aqui o seu recado pra gente..."></textarea>
+  <input id="muralNome" type="text" placeholder="Assina com o seu nome" autocomplete="name">
+  <button type="button" id="muralEnviar">Enviar pelo WhatsApp</button>
+  <small>Abre o WhatsApp com a mensagem pronta pra mandar pro Lucas. A gente imprime e cola no mural.</small>
+</section>
 
 <section class="como">
   <h2>Como funciona<small>é rapidinho, prometo</small></h2>
@@ -489,5 +503,12 @@ document.querySelectorAll('button.pix').forEach(b => b.addEventListener('click',
   if (ok) { const txt = b.textContent; b.classList.add('ok'); b.textContent = 'Copiado! Agora cola no banco 🙌'; setTimeout(() => { b.classList.remove('ok'); b.textContent = txt; }, 4000); }
 }));
 toast.addEventListener('click', e => { if (e.target.tagName !== 'TEXTAREA') toast.classList.remove('on'); });
+document.getElementById('muralEnviar').addEventListener('click', () => {
+  const msg = document.getElementById('muralMsg').value.trim();
+  const nome = document.getElementById('muralNome').value.trim();
+  if (!msg || !nome) { alert('Escreve a mensagem e assina com o seu nome 😉'); return; }
+  const texto = 'Mensagem pro mural da casa nova:\n\n' + msg + '\n\n— ' + nome;
+  window.open('https://wa.me/5531995107535?text=' + encodeURIComponent(texto), '_blank');
+});
 </script>
 </body></html>
